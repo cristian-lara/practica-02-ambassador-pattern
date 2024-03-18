@@ -1,0 +1,12 @@
+{
+  "3": {
+    "name": "Juan Pérez",
+    "email": "juan.perez@example.com",
+    "age": 30
+  },
+  "6": {
+    "name": "Laura Martínez",
+    "email": "laura.martinez@example.com",
+    "age": 25
+  }
+}

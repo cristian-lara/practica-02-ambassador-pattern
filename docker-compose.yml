@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  flask_service:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app:/app
+    environment:
+      - FLASK_ENV=development
+
+  ambassador:
+    build:
+      context: ./ambassador
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./ambassador:/app
+    environment:
+      - FLASK_ENV=development
+    depends_on:
+      - flask_service
